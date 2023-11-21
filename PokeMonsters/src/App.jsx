@@ -49,6 +49,7 @@ function App() {
         )}
       </nav>
       <PokemonCard pokemon={pokemonList[pokemonIndex]} />
+
     </div>
   );
 }
