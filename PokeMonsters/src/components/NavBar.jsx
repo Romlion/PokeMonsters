@@ -17,23 +17,22 @@ function NavBar({ pokemonIndex, setPokemonIndex, pokemonList }) {
   };
 
   return (
-    <nav>
-      {pokemonIndex > 0 && (
-        <button type="button" onClick={pickPrevious}>
-          previous
+    <div>
+      {pokemonList.map((pokemon, index) => (
+        <button
+          type="button"
+          onClick={() => setPokemonIndex(index)}
+          key={pokemon.name}
+        >
+          {pokemon.name}
         </button>
-      )}
-      {pokemonIndex < pokemonList.length - 1 && (
-        <button type="button" onClick={pickNext}>
-          next
-        </button>
-      )}
-    </nav>
+      ))}
+    </div>
+
   );
 }
 
 NavBar.propTypes = {
-  pokemonIndex: PropTypes.number.isRequired,
   setPokemonIndex: PropTypes.func.isRequired,
   pokemonList: PropTypes.arrayOf(
     PropTypes.shape({
