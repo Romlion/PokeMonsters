@@ -1,6 +1,21 @@
 import PropTypes from "prop-types";
 
-function NavBar({ setPokemonIndex, pokemonList }) {
+function NavBar({ pokemonIndex, setPokemonIndex, pokemonList }) {
+  const pickPrevious = () => {
+    setPokemonIndex(pokemonIndex - 1);
+    checkForPikachu(pokemonIndex - 1);
+  };
+  const pickNext = () => {
+    setPokemonIndex(pokemonIndex + 1);
+    checkForPikachu(pokemonIndex + 1);
+  };
+
+  const checkForPikachu = (index) => {
+    if (pokemonList[index] && pokemonList[index].name === "pikachu") {
+      alert("pika pikachu !!!");
+    }
+  };
+
   return (
     <div>
       {pokemonList.map((pokemon, index) => (
