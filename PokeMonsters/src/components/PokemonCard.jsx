@@ -8,7 +8,6 @@ function PokemonCard({ pokemon }) {
       ) : (
         <p>???</p>
       )}
-
       <figcaption>{pokemon.name}</figcaption>
     </figure>
   );

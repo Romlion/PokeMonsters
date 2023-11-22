@@ -13,6 +13,7 @@ function NavBar({ setPokemonIndex, pokemonList }) {
         </button>
       ))}
     </div>
+
   );
 }
 
